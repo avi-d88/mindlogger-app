@@ -10,4 +10,4 @@ import {
 } from 'react-native';
 import setup from './app/setup';
 
-AppRegistry.registerComponent('MDCApp', setup);
+AppRegistry.registerComponent('Mindlogger', setup);

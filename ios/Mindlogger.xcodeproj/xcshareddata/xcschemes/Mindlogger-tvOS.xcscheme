@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "MDCApp-tvOS.app"
-               BlueprintName = "MDCApp-tvOS"
-               ReferencedContainer = "container:MDCApp.xcodeproj">
+               BuildableName = "Mindlogger-tvOS.app"
+               BlueprintName = "Mindlogger-tvOS"
+               ReferencedContainer = "container:Mindlogger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "MDCApp-tvOSTests.xctest"
-               BlueprintName = "MDCApp-tvOSTests"
-               ReferencedContainer = "container:MDCApp.xcodeproj">
+               BuildableName = "Mindlogger-tvOSTests.xctest"
+               BlueprintName = "Mindlogger-tvOSTests"
+               ReferencedContainer = "container:Mindlogger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "MDCApp-tvOSTests.xctest"
-               BlueprintName = "MDCApp-tvOSTests"
-               ReferencedContainer = "container:MDCApp.xcodeproj">
+               BuildableName = "Mindlogger-tvOSTests.xctest"
+               BlueprintName = "Mindlogger-tvOSTests"
+               ReferencedContainer = "container:Mindlogger.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "MDCApp-tvOS.app"
-            BlueprintName = "MDCApp-tvOS"
-            ReferencedContainer = "container:MDCApp.xcodeproj">
+            BuildableName = "Mindlogger-tvOS.app"
+            BlueprintName = "Mindlogger-tvOS"
+            ReferencedContainer = "container:Mindlogger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "MDCApp-tvOS.app"
-            BlueprintName = "MDCApp-tvOS"
-            ReferencedContainer = "container:MDCApp.xcodeproj">
+            BuildableName = "Mindlogger-tvOS.app"
+            BlueprintName = "Mindlogger-tvOS"
+            ReferencedContainer = "container:Mindlogger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "MDCApp-tvOS.app"
-            BlueprintName = "MDCApp-tvOS"
-            ReferencedContainer = "container:MDCApp.xcodeproj">
+            BuildableName = "Mindlogger-tvOS.app"
+            BlueprintName = "Mindlogger-tvOS"
+            ReferencedContainer = "container:Mindlogger.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
