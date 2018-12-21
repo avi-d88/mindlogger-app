@@ -12,6 +12,7 @@ import {randomLink} from '../../../helper';
 import TextEntry from './TextEntry';
 import ScreenButton from './ScreenButton';
 import SurveySection from './survey';
+import CanvasSection from './canvas';
 import GImage from '../../../components/image/Image';
 
 const styles = StyleSheet.create({
@@ -109,6 +110,9 @@ class Screen extends Component {
 
   handleReset = () => {
     this.setState({answer:undefined});
+    if(this.canvasRef) {
+      this.canvasRef.resetData();
+    }
   }
 
   getPayload(){
@@ -198,7 +202,7 @@ class Screen extends Component {
     } else {
       return (<View style={styles.footer}>
         <ScreenButton transparent onPress={this.handlePrev}><Icon name="md-arrow-back"/></ScreenButton>
-        { canvasType ? 
+        { canvasType == 'camera' ? 
         (<ScreenButton onPress={this.handleAction} text={buttonText}>{spinner && <Spinner />}</ScreenButton>)
         :
         <ScreenButton transparent/>
@@ -216,6 +220,27 @@ class Screen extends Component {
     return data.pictureVideo && data.pictureVideo.display && data.pictureVideo.files.length > 0 &&
       <GImage file={data.pictureVideo.files} style={{width: '100%', height: 200, resizeMode: 'cover'}} />
   }
+
+  renderSurvey(data) {
+    return data.surveyType && <SurveySection
+            type={data.surveyType}
+            config={data.survey}
+            answer={this.answer('survey')}
+            onChange={this.onSurvey}
+            onNextChange={this.onNextChange}
+            />
+  }
+
+  renderCanvas(data) {
+    return data.canvasType && <CanvasSection
+            type={data.canvasType}
+            config={data.canvas}
+            answer={this.answer('canvas')}
+            onChange={this.onSurvey}
+            ref={ref => {this.canvasRef = ref}}
+            onNextChange={this.onNextChange}
+            />
+  }
   renderScrollContent() {
     let {screen: {meta: data}} = this.props;
     data = data || {};
@@ -225,15 +250,8 @@ class Screen extends Component {
       <View style={styles.paddingContent}>
         {hasAudio && data.audio.playbackIcon && <Button transparent onPress={this.playAudio}><Icon name="volume-up" /></Button> }
         { data.surveyType != 'audio' && <Text style={styles.text}>{data.text}</Text> }
-        {
-          data.surveyType && <SurveySection
-            type={data.surveyType}
-            config={data.survey}
-            answer={this.answer('survey')}
-            onChange={this.onSurvey}
-            onNextChange={this.onNextChange}
-            />
-        }
+        { this.renderSurvey(data) }
+        { this.renderCanvas(data) }
         {
           data.textEntry && data.textEntry.display && 
           <TextEntry
@@ -255,15 +273,8 @@ class Screen extends Component {
       {this.renderPicture(data)}
         {hasAudio && data.audio.playbackIcon && <Button transparent onPress={this.playAudio}><Icon name="volume-up" /></Button> }
         <Text style={styles.text}>{data.text}</Text>
-        {
-          data.surveyType && <SurveySection
-            type={data.surveyType}
-            config={data.survey}
-            answer={this.answer('survey')}
-            onChange={this.onSurvey}
-            onNextChange={this.onNextChange}
-            />
-        }
+        { this.renderSurvey(data) }
+        { this.renderCanvas(data) }
         {
           data.textEntry && data.textEntry.display && 
           <TextEntry
@@ -281,7 +292,7 @@ class Screen extends Component {
       <View style={{flex: 1, flexDirection: 'column'}}>
         {
           data && (
-          data.surveyType == 'slider' ?
+          (data.surveyType == 'slider' || data.canvasType == 'draw') ?
           this.renderContent() : 
              this.renderScrollContent())
         }
